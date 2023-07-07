@@ -1,19 +1,8 @@
 import React from "react";
-import { BsCurrencyDollar } from "react-icons/bs";
 import { BsDot } from "react-icons/bs";
 import { Stacked, Pie, Button, SparkLine } from "../components";
-import {
-  earningData,
-  medicalproBranding,
-  recentTransactions,
-  weeklyStats,
-  dropdownData,
-  SparklineAreaData,
-  ecomPieChartData,
-} from "../data/dummy";
-
+import { earningData, SparklineAreaData } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
-import Sparkline from "../components/Charts/SparkLine";
 
 const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
@@ -32,13 +21,13 @@ const Ecommerce = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Earnings</p>
-              <p className="text-2xl">$63,448.78</p>
+              <p className="text-2xl dark:text-gray-100">$63,448.78</p>
             </div>
           </div>
           <div className="mt-6 ">
             <Button
               color="white"
-              bgColor="blue"
+              bgColor={currentColor}
               text="Download"
               borderRadius="10px"
               size="md"
@@ -148,14 +137,14 @@ const Ecommerce = () => {
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
-                  color="blue"
+                  color={currentColor}
                 />
               </div>
               <div className="mt-10">
                 <Button
                   type="button"
                   color="white"
-                  bgColor="blue"
+                  bgColor={currentColor}
                   text="Download Report"
                   borderRadius="10px"
                 />
